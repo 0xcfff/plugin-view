@@ -193,6 +193,14 @@ function date_check() {
     return 0
 }
 
+[ "$action" = "usage" ] && {
+  echo "  View todos:"
+  echo "    view"
+  echo "      Groups and outputs tasks by various dimensions like projects, contextes, etc."
+  echo ""
+  exit
+}
+
 # Validate the input options
 re="^(help|project|context|date|nodate|future|past|today|tomorrow|yesterday|([+-][0-9]+|[0-9]+)(days|weeks|months|years))$"
 if [[ "$option" =~ $re ]]; then
